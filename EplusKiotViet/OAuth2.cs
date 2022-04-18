@@ -44,18 +44,15 @@ namespace EplusKiotViet
             }
             catch (Exception e)
             {
-                Console.Out.WriteLine(e.ToString());
-                status = "502";
+                status = e.ToString();
+            }
+
+            if (status.Length > 20)
+            {
+                status = "Bearer " + Util.GetParam(status, "access_token", false);
             }
 
             Console.Write(status);
-            if (status.Length > 20)
-            {
-                int from = status.IndexOf("\"access_token\":\"", StringComparison.Ordinal) + 16;
-                int to = status.IndexOf("\",\"", from, StringComparison.Ordinal);
-                status = "Bearer " + status.Substring(from, to - from);
-            }
-
             return status;
         }
     }

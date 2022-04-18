@@ -4,3 +4,9 @@ D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.csproj.AssemblyReferen
 D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.csproj.CoreCompileInputs.cache
 D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.dll
 D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.pdb
+E:\C#\kiotvietCLRthangvm\EplusKiotViet\bin\Debug\EplusKiotViet.dll
+E:\C#\kiotvietCLRthangvm\EplusKiotViet\bin\Debug\EplusKiotViet.pdb
+E:\C#\kiotvietCLRthangvm\EplusKiotViet\obj\Debug\EplusKiotViet.csproj.AssemblyReference.cache
+E:\C#\kiotvietCLRthangvm\EplusKiotViet\obj\Debug\EplusKiotViet.csproj.CoreCompileInputs.cache
+E:\C#\kiotvietCLRthangvm\EplusKiotViet\obj\Debug\EplusKiotViet.dll
+E:\C#\kiotvietCLRthangvm\EplusKiotViet\obj\Debug\EplusKiotViet.pdb

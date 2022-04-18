@@ -27,9 +27,9 @@ public class CLR
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
         string token = OAuth2.Api(URL_TOKEN, body);
         string bodyCustomer = BodyRequest.GetBodyCustomer(code.Trim(), name.Trim(), tel.Trim(), address.Trim());
-        Console.WriteLine(bodyCustomer);
         string customer = Api.Post(URL_API + CUSTOMER, bodyCustomer, token);
-        text = customer;
+        string res = Util.GetParam(customer, "id");
+        text = res;
     }
 
     [SqlProcedure]
@@ -42,9 +42,10 @@ public class CLR
 
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
         string token = OAuth2.Api(URL_TOKEN, body);
-        string bodyCustomer = BodyRequest.GetBodySku(code.Trim(), name.Trim(), unit.Trim());
-        string customer = Api.Post(URL_API + SKU, bodyCustomer, token);
-        text = customer;
+        string bodySku = BodyRequest.GetBodySku(code.Trim(), name.Trim(), unit.Trim());
+        string sku = Api.Post(URL_API + SKU, bodySku, token);
+        string res = Util.GetParam(sku, "id");
+        text = res;
     }
 
     [SqlProcedure]
@@ -59,9 +60,9 @@ public class CLR
         string token = OAuth2.Api(URL_TOKEN, body);
         string listIn = Util.UpdateIn(code.Trim(), amount.Trim(), token);
         string res = Api.PUT(URL_API + INVENTORY, listIn, token);
-
+        
         text = res;
     }
-
+    
 
 }
