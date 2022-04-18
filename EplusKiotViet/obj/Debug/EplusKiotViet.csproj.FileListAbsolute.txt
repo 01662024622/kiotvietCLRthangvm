@@ -1,0 +1,6 @@
+D:\C#\EplusKiotViet\EplusKiotViet\bin\Debug\EplusKiotViet.dll
+D:\C#\EplusKiotViet\EplusKiotViet\bin\Debug\EplusKiotViet.pdb
+D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.csproj.AssemblyReference.cache
+D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.csproj.CoreCompileInputs.cache
+D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.dll
+D:\C#\EplusKiotViet\EplusKiotViet\obj\Debug\EplusKiotViet.pdb
