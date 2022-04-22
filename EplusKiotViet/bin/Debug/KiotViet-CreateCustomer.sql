@@ -15,7 +15,7 @@ CREATE ASSEMBLY EplusKiotViet from 'D:\C#\EplusKiotViet\EplusKiotViet\bin\Debug\
 go
 
 
-CREATE PROCEDURE StoreCustomer(@code nchar(48),@name nchar(500),@tel nvarchar(50),@address nvarchar(500), @out nchar(2000) OUTPUT)
+CREATE PROCEDURE StoreCustomer(@code nchar(48),@name nchar(500),@tel nvarchar(50),@address nvarchar(500),@Id nchar(50) OUTPUT, @Log nchar(2000) OUTPUT)
 AS  
 EXTERNAL NAME EplusKiotViet.CLR.CreateCustomer;
 Go
@@ -25,15 +25,17 @@ DECLARE @name nvarchar(500)
 DECLARE @code nvarchar(48) 
 DECLARE @tel nvarchar(24) 
 DECLARE @adress nvarchar(500) 
-DECLARE @OUT nvarchar(1000)  
+DECLARE @Log nvarchar(2000)  
+DECLARE @Id nvarchar(50)  
 
 SET @code = N'KH06072021'
 SET @name =N'thangvm'
 SET @tel =N'0999999999'
 SET @adress =N'thangvm'
 
-EXEC StoreCustomer @code,@nane,@tel,@adress,@OUT out
-PRINT @OUT
+EXEC StoreCustomer @code,@name,@tel,@adress,@Id out,@Log out
+PRINT @Log
+PRINT @Id
 
 
 
@@ -66,13 +68,13 @@ go
 --go
 
 
-CREATE PROCEDURE StoreSku(@code nchar(48),@name nchar(500),@unit nvarchar(24), @out nchar(2000) OUTPUT)
+CREATE PROCEDURE StoreSku(@code nchar(48),@name nchar(500),@unit nvarchar(24),@Id nchar(50) OUTPUT, @out nchar(2000) OUTPUT)
 AS  
 EXTERNAL NAME EplusKiotViet.CLR.CreateSku;
 Go
 
 
-
+DECLARE @Id nvarchar(50)  
 DECLARE @OUT nvarchar(1000)  
 DECLARE @name nvarchar(500) 
 DECLARE @code nvarchar(48) 
@@ -82,9 +84,9 @@ SET @code = N'KH060720211'
 SET @name =N'thangvm1'
 SET @unit =N'cái'
 
-EXEC StoreSku @code,@name,@unit,@OUT out
+EXEC StoreSku @code,@name,@unit,@Id out,@OUT out
 PRINT @OUT
-
+PRINT @Id
 
 
 

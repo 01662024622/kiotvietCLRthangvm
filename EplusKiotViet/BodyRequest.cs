@@ -37,6 +37,22 @@ namespace EplusKiotViet
                    "{" +
                    "\"branchId\": 3634," +
                    $"\"onHand\": {amount}" +
+                   "}," +
+                   "{" +
+                   "\"branchId\": 63506," +
+                   $"\"onHand\": {amount}" +
+                   "}," +
+                   "{" +
+                   "\"branchId\": 164049," +
+                   $"\"onHand\": {amount}" +
+                   "}," +
+                   "{" +
+                   "\"branchId\": 19576," +
+                   $"\"onHand\": {amount}" +
+                   "}," +
+                   "{" +
+                   "\"branchId\": 58187," +
+                   $"\"onHand\": {amount}" +
                    "}" +
                    "]" +
                    "}";

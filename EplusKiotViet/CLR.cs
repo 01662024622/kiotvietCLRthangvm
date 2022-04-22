@@ -17,7 +17,7 @@ public class CLR
     // tooken
 
     [SqlProcedure]
-    public static void CreateCustomer(String code, String name, String tel, String address, out SqlString text)
+    public static void CreateCustomer(String code, String name, String tel, String address, out SqlString id,out SqlString log)
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
@@ -29,11 +29,12 @@ public class CLR
         string bodyCustomer = BodyRequest.GetBodyCustomer(code.Trim(), name.Trim(), tel.Trim(), address.Trim());
         string customer = Api.Post(URL_API + CUSTOMER, bodyCustomer, token);
         string res = Util.GetParam(customer, "id");
-        text = res;
+        id = res;
+        log = customer;
     }
 
     [SqlProcedure]
-    public static void CreateSku(String code, String name, String unit, out SqlString text)
+    public static void CreateSku(String code, String name, String unit, out SqlString id, out SqlString text)
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
@@ -45,7 +46,8 @@ public class CLR
         string bodySku = BodyRequest.GetBodySku(code.Trim(), name.Trim(), unit.Trim());
         string sku = Api.Post(URL_API + SKU, bodySku, token);
         string res = Util.GetParam(sku, "id");
-        text = res;
+        id = res;
+        text = sku;
     }
 
     [SqlProcedure]
