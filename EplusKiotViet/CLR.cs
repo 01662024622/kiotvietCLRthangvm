@@ -69,7 +69,7 @@ public class CLR
     }
 
     [SqlProcedure]
-    public static void UpdateAccDoc(string id, string description, string status)
+    public static void UpdateAccDoc(Decimal id, string description, string status)
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
@@ -80,5 +80,10 @@ public class CLR
         string token = OAuth2.Api(URL_TOKEN, body);
         string listIn = BodyRequest.UpdateAccdoc(description.Trim(), status.Trim());
         Api.PUT(URL_API + ACCDOC + "/" + id, listIn, token);
+    }
+
+    public static void Main(string[] args)
+    {
+        
     }
 }
