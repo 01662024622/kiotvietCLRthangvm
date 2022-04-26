@@ -12,12 +12,14 @@ public class CLR
     private const string URL_API = "https://public.kiotapi.com/";
     private const string CUSTOMER = "customers";
     private const string SKU = "products";
+    private const string ACCDOC = "invoices";
     private const string INVENTORY = "listupdatedproducts";
 
     // tooken
 
     [SqlProcedure]
-    public static void CreateCustomer(String code, String name, String tel, String address, out SqlString id,out SqlString log)
+    public static void CreateCustomer(String code, String name, String tel, String address, out SqlString id,
+        out SqlString log)
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
@@ -60,11 +62,23 @@ public class CLR
 
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
         string token = OAuth2.Api(URL_TOKEN, body);
-        string listIn = Util.UpdateIn(code.Trim(), amount.Trim(), token);
+        string listIn = Util.UpdateIn(code.Trim(), amount.Trim());
         string res = Api.PUT(URL_API + INVENTORY, listIn, token);
-        
+
         text = res;
     }
-    
 
+    [SqlProcedure]
+    public static void UpdateAccDoc(string id, string description, string status)
+    {
+        // ssl2
+        ServicePointManager.Expect100Continue = true;
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType) (0xc0 | 0x300 | 0xc00);
+        // Display the number of command line arguments.
+
+        string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
+        string token = OAuth2.Api(URL_TOKEN, body);
+        string listIn = BodyRequest.UpdateAccdoc(description.Trim(), status.Trim());
+        Api.PUT(URL_API + ACCDOC + "/" + id, listIn, token);
+    }
 }

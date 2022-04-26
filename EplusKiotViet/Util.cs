@@ -29,7 +29,7 @@ namespace EplusKiotViet
             }
         }
 
-        public static string UpdateIn(string idString, string amountString, string token)
+        public static string UpdateIn(string idString, string amountString)
         {
             string[] ids = idString.Split(',');
             string[] amounts = amountString.Split(',');

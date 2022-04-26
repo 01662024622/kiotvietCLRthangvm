@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace EplusKiotViet
 {
@@ -26,6 +27,13 @@ namespace EplusKiotViet
                    "\"allowsSale\": false," +
                    $"\"unit\": \"{unit}\"," +
                    "\"branchId\":3634" +
+                   "}";
+        }
+
+        public static string UpdateAccdoc(string description , string status)
+        {
+            return "{" +
+                   $"\"description\": \"{description}-{status}\"" +
                    "}";
         }
 

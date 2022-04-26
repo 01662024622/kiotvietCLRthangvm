@@ -137,3 +137,47 @@ EXEC UpdateInventory @code,@amount,@OUT out
 PRINT @OUT
 
 
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+--#
+
+-- Cập nhật trạng thái
+use Test;
+DROP PROCEDURE IF EXISTS KiotvietUpdateAccdocStatus
+--DROP ASSEMBLY IF EXISTS EplusKiotViet -- Cái này chạy ở trên khách hàng rồi thì bỏ đi không chạy lại cái này nữa
+go
+
+--CREATE ASSEMBLY EplusKiotViet from 'D:\C#\EplusKiotViet\EplusKiotViet\bin\Debug\EplusKiotViet.dll' WITH PERMISSION_SET = UNSAFE; -- Cái này chạy ở trên khách hàng rồi thì bỏ đi không chạy lại cái này nữa
+
+--go
+
+-- đẩy tối đa 50 mã 1 lúc có thể tối đa 100 mã
+CREATE PROCEDURE KiotvietUpdateAccdocStatus(@id nchar(2000),@description nchar(1000), @status nchar(500))
+AS  
+EXTERNAL NAME EplusKiotViet.CLR.UpdateAccdoc;
+Go
+
+
+
+DECLARE @id nvarchar(24)  
+DECLARE @description nvarchar(1000) 
+DECLARE @status nvarchar(500) 
+
+SET @id = N'89888896'
+SET @description =N'Test'
+SET @status =N'Đang nhặt hàng'
+EXEC KiotvietUpdateAccdocStatus @id,@description,@status
+
+
