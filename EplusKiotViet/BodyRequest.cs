@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace EplusKiotViet
@@ -66,9 +67,18 @@ namespace EplusKiotViet
                    "}";
         }
 
+        public static string getS(int price)
+        {
+            return "{"+
+                $"\"basePrice\": {price}"+
+            "}";
+        }
+
         public static string GetbodyAuth(string id, string secret)
         {
             return "scopes=PublicApi.Access&grant_type=client_credentials&client_id=" + id + "&client_secret=" + secret;
         }
+
+
     }
 }
