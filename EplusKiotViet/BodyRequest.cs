@@ -56,7 +56,7 @@ namespace EplusKiotViet
                    $"\"onHand\": {amount}" +
                    "}," +
                    "{" +
-                   "\"branchId\": 19576," +
+                   "\"branchId\": 19578," +
                    $"\"onHand\": {amount}" +
                    "}," +
                    "{" +

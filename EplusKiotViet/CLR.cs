@@ -70,7 +70,7 @@ public class CLR
     }
 
     [SqlProcedure]
-    public static void UpdateAccDoc(string id, string description, string status)
+    public static void UpdateAccDoc(Decimal id, string description, string status)
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
@@ -82,51 +82,4 @@ public class CLR
         string listIn = BodyRequest.UpdateAccdoc(description.Trim(), status.Trim());
         Api.PUT(URL_API + ACCDOC + "/" + id, listIn, token);
     }
-
-    public static void Main()
-    {
-        Dictionary<int, int> a = new Dictionary<int, int>();
-        a.Add(20906691,105000);
-        a.Add(20906690,58000);
-        a.Add(20906708,58000);
-        a.Add(20906692,55000);
-        a.Add(20906693,43000);
-        a.Add(20906722,43000);
-        a.Add(20906732,40000);
-        a.Add(20906721,80000);
-        a.Add(20906729,155000);
-        a.Add(20906694,90000);
-        a.Add(20906696,80000);
-        a.Add(20906737,155000);
-        a.Add(20906742,83000);
-        a.Add(20906741,95000);
-        a.Add(20906738,125000);
-        a.Add(20906743,165000);
-        a.Add(20906724,165000);
-        a.Add(20906731,195000);
-        a.Add(20906748,125000);
-        a.Add(20906747,65000);
-        a.Add(20906715,335000);
-        a.Add(20906725,95000);
-        a.Add(20906716,355000);
-        a.Add(20906707,355000);
-        a.Add(20906698,455000);
-        a.Add(20906728,33000);
-        a.Add(20906717,48000);
-        a.Add(20906750,55000);
-        a.Add(20906709,48000);
-        a.Add(20906720,45000);
-        a.Add(20906723,48000);
-        a.Add(20906736,175000);
-        a.Add(20906727,165000);
-        string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
-        string token = OAuth2.Api(URL_TOKEN, body);
-        foreach (var keyValuePair in a)
-        {
-            
-            string listIn = BodyRequest.getS(keyValuePair.Value);
-            Console.WriteLine(Api.PUT(URL_API + SKU + "/" + keyValuePair.Key, listIn, token));
-        }
-    }
-    
 }
