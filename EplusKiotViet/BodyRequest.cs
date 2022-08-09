@@ -25,7 +25,7 @@ namespace EplusKiotViet
                    $"\"code\": \"{code}\"," +
                    $"\"name\": \"{name}\"," +
                    "\"categoryId\": 720186," +
-                   "\"allowsSale\": false," +
+                   "\"allowsSale\": true," +
                    $"\"unit\": \"{unit}\"," +
                    "\"branchId\":3634" +
                    "}";
