@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EplusKiotViet;
+using Microsoft.SqlServer.Server;
+using System;
 using System.Data.SqlTypes;
 using System.Net;
-using EplusKiotViet;
-using Microsoft.SqlServer.Server;
 
 public class CLR
 {
@@ -24,7 +23,7 @@ public class CLR
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
-        ServicePointManager.SecurityProtocol = (SecurityProtocolType) (0xc0 | 0x300 | 0xc00);
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
         // Display the number of command line arguments.
 
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
@@ -41,7 +40,7 @@ public class CLR
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
-        ServicePointManager.SecurityProtocol = (SecurityProtocolType) (0xc0 | 0x300 | 0xc00);
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
         // Display the number of command line arguments.
 
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
@@ -58,7 +57,7 @@ public class CLR
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
-        ServicePointManager.SecurityProtocol = (SecurityProtocolType) (0xc0 | 0x300 | 0xc00);
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
         // Display the number of command line arguments.
 
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);
@@ -70,11 +69,11 @@ public class CLR
     }
 
     [SqlProcedure]
-    public static void UpdateAccDoc(Decimal id, string description, string status)
+    public static void UpdateAccDoc(String id, String description, String status)
     {
         // ssl2
         ServicePointManager.Expect100Continue = true;
-        ServicePointManager.SecurityProtocol = (SecurityProtocolType) (0xc0 | 0x300 | 0xc00);
+        ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
         // Display the number of command line arguments.
 
         string body = BodyRequest.GetbodyAuth(CLIENT_ID, CLIENT_SECRET);

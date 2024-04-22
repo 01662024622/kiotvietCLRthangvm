@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace EplusKiotViet
+﻿namespace EplusKiotViet
 {
     public class BodyRequest
     {
@@ -31,36 +27,20 @@ namespace EplusKiotViet
                    "}";
         }
 
-        public static string UpdateAccdoc(string description , string status)
+        public static string UpdateAccdoc(string description, string status)
         {
             return "{" +
                    $"\"description\": \"{description}-{status}\"" +
                    "}";
         }
 
-        public static string GetBodyInventory(string id,string amount)
+        public static string GetBodyInventory(string id, string amount)
         {
             return $"{{\"id\":{id}," +
                    "\"inventories\": " +
                    "[" +
                    "{" +
                    "\"branchId\": 3634," +
-                   $"\"onHand\": {amount}" +
-                   "}," +
-                   "{" +
-                   "\"branchId\": 63506," +
-                   $"\"onHand\": {amount}" +
-                   "}," +
-                   "{" +
-                   "\"branchId\": 164049," +
-                   $"\"onHand\": {amount}" +
-                   "}," +
-                   "{" +
-                   "\"branchId\": 19578," +
-                   $"\"onHand\": {amount}" +
-                   "}," +
-                   "{" +
-                   "\"branchId\": 58187," +
                    $"\"onHand\": {amount}" +
                    "}" +
                    "]" +
@@ -69,8 +49,8 @@ namespace EplusKiotViet
 
         public static string getS(int price)
         {
-            return "{"+
-                $"\"basePrice\": {price}"+
+            return "{" +
+                $"\"basePrice\": {price}" +
             "}";
         }
 
