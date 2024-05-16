@@ -9,7 +9,7 @@
                    $"\"name\": \"{name}\"," +
                    $"\"contactNumber\": \"{tel}\"," +
                    $"\"address\": \"{address}\"," +
-                   "\"branchId\":3634," +
+                   "\"branchId\":164049," +
                    "\"groupIds\":116050" +
                    "}";
         }
@@ -23,7 +23,7 @@
                    "\"categoryId\": 720186," +
                    "\"allowsSale\": true," +
                    $"\"unit\": \"{unit}\"," +
-                   "\"branchId\":3634" +
+                   "\"branchId\":164049" +
                    "}";
         }
 
@@ -40,7 +40,7 @@
                    "\"inventories\": " +
                    "[" +
                    "{" +
-                   "\"branchId\": 3634," +
+                   "\"branchId\": 164049," +
                    $"\"onHand\": {amount}" +
                    "}" +
                    "]" +
